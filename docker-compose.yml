@@ -1,0 +1,14 @@
+services:
+  profiles-api:
+    build:
+      target: django-api
+    image: profiles-api:develop
+    restart: unless-stopped
+
+  profiles-front:
+    build:
+      target: front
+    image: profiles-front:develop
+    ports:
+      - 80:80
+
